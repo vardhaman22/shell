@@ -5,7 +5,7 @@ FROM --platform=$BUILDPLATFORM registry.suse.com/bci/golang:1.22 as helm
 
 # Clone repository once, and reuse it for target archs.
 ARG HELM_VERSION
-ADD --keep-git-dir=true https://github.com/rancher/helm.git#${HELM_VERSION} /helm
+ADD --keep-git-dir=true https://github.com/vardhaman22/helm.git#${HELM_VERSION} /helm
 RUN cd /helm && go mod download
 
 COPY --from=xx / /
